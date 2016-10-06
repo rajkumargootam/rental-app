@@ -3,11 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title>Rental App</title>
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
+    <link rel="stylesheet" href="node_modules/mdi/css/materialdesignicons.css" media="all" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body ng-app="rentalApp" ng-controller="rentalCtrl">
 
-  <hello-world></hello-world>
-  <script src="node_modules/angular/angular.js"></script>
+<md-toolbar>
+  <div class="md-toolbar-tools">
+    <p><strong>RentalApp</strong></p>
+    <md-button>
+        <md-icon class="mdi mdi-plus-circle"></md-icon>
+        New Rental
+    </md-button>
+  </div>
+</md-toolbar>
+
+<script src="node_modules/angular/angular.js"></script>
   <script src="node_modules/angular/angular-animate.js"></script>
   <script src="node_modules/angular/angular-aria.js"></script>
   <script src="node_modules/angular-material/angular-material.js"></script>
