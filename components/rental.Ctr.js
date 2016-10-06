@@ -4,6 +4,9 @@
 angular
   .module("rentalApp")
   .controller("rentalCtrl", function($scope){
-   $scope.name = "Rajkumar";
+   $scope.name = {
+     first:"raj",
+     last:"kumar"
+   };
   });
 })();
