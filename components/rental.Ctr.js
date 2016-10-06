@@ -8,5 +8,8 @@ angular
      first:"raj",
      last:"kumar"
    };
+
+   $scope.message = "Hello, world!!!";
+   
   });
 })();
