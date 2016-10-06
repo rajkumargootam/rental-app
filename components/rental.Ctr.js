@@ -3,7 +3,7 @@
 
 angular
   .module("rentalApp")
-  .controller("rentalCtrl", function(){
-
+  .controller("rentalCtrl", function($scope){
+   $scope.name = "Rajkumar";
   });
 })();
