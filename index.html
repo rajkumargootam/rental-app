@@ -29,6 +29,12 @@
         <h2>{{rental.date | date:'longDate'}}</h2>
         <p>{{ rental.description }}</p>
       </div>
+
+      <div class="rental-contact">
+        <p><md-icon class="mdi mdi-account"></md-icon>{{ rental.contact.name }}</p>
+        <p><md-icon class="mdi mdi-phone"></md-icon>{{ rental.contact.phone}}</p>
+        <p><md-icon class="mdi mdi-email"></md-icon>{{ rental.contact.email }}</p>
+      </div>
     </md-card-content>
   </md-card>
 </md-content>
