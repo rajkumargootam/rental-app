@@ -8,56 +8,84 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body ng-app="rentalApp" ng-controller="rentalCtrl">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <p><strong>RentalApp</strong></p>
+      <md-button ng-click="openSidebar()">
+          <md-icon class="mdi mdi-plus-circle"></md-icon>
+          New Rental
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-sidenav class="md-sidenav-left md-whiteframe-z2 sidenav" md-component-id="left">
+    <md-toolbar>
+      <h1 class="md-toolbar-tools">Add a Rental</h1>
+    </md-toolbar>
+    <md-content layout-padding>
+      <form>
+        <md-input-container>
+          <label for="title">Title</label>
+          <input type="text" id="title" md-autofocus>
+        </md-input-container>
+        <md-input-container>
+          <label for="price">Price</label>
+          <input type="text" id="price">
+        </md-input-container>
+        <md-input-container>
+          <label for="description">Description</label>
+          <textarea type="text" id="description"></textarea>
+        </md-input-container>
+        <md-input-container>
+          <label for="image">Image Link</label>
+          <input type="text" id="image">
+        </md-input-container>
+        <md-button class="md-primary">Save</md-button>
+        <md-button class="md-primary">Save Edit</md-button>
+        <md-button class="md-warn" ng-click="closeSidebar()">Cancel</md-button>
+      </form>
+    </md-content>
+  </md-sidenav>
 
-<md-toolbar>
-  <div class="md-toolbar-tools">
-    <p><strong>RentalApp</strong></p>
-    <md-button>
-        <md-icon class="mdi mdi-plus-circle"></md-icon>
-        New Rental
-    </md-button>
-  </div>
-</md-toolbar>
-
-<md-content class="md-padding" layout="row" layout-wrap>
-  <md-card  ng-repeat="rental in rentals"flex="30">
-    <img ng-src="{{ rental.image}}" alt="">
-    <md-card-content>
-      <div class="rental-info" ng-show="!showContact">
-        <h2 class="md-title">{{ rental.title }}</h2>
-        <h3>{{ rental.price | currency }}</h3>
-        <h2>{{rental.date | date:'longDate'}}</h2>
-        <p>{{ rental.description }}</p>
-      </div>
-
-      <div class="rental-contact" ng-show="showContact">
-        <p><md-icon class="mdi mdi-account"></md-icon>{{ rental.contact.name }}</p>
-        <p><md-icon class="mdi mdi-phone"></md-icon>{{ rental.contact.phone}}</p>
-        <p><md-icon class="mdi mdi-email"></md-icon>{{ rental.contact.email }}</p>
-      </div>
-      <!-- horizontal buttons -->
-      <div layout="row">
-        <md-button ng-click="showContact=true" ng-show="!showContact">Contact</md-button>
-        <md-button ng-click="showContact=false" ng-show="showContact">Details</md-button>
-        <md-button ng-click="showAdmin=true" ng-show="!showAdmin">Admin</md-button>
-        <md-button ng-click="showAdmin=false" ng-show="showAdmin">Close</md-button>
-      </div>
-      <div class="rental-admin" ng-if="showAdmin">
-        <h3>Admin</h3>
-        <div layout="row">
-          <md-button class="md-primary">Edit</md-button>
-          <md-button class="md-warn">Details</md-button>
+  <md-content class="md-padding" layout="row" layout-wrap>
+    <md-card  ng-repeat="rental in rentals"flex="30">
+      <img ng-src="{{ rental.image}}" alt="">
+      <md-card-content>
+        <div class="rental-info" ng-show="!showContact">
+          <h2 class="md-title">{{ rental.title }}</h2>
+          <h3>{{ rental.price | currency }}</h3>
+          <h2>{{rental.date | date:'longDate'}}</h2>
+          <p>{{ rental.description }}</p>
         </div>
-      </div>
-    </md-card-content>
-  </md-card>
-</md-content>
 
-<script src="node_modules/angular/angular.js"></script>
-  <script src="node_modules/angular/angular-animate.js"></script>
-  <script src="node_modules/angular/angular-aria.js"></script>
-  <script src="node_modules/angular-material/angular-material.js"></script>
-  <script src="scripts/app.js"></script>
-  <script src="components/rental.Ctr.js"></script>
-  </body>
+        <div class="rental-contact" ng-show="showContact">
+          <p><md-icon class="mdi mdi-account"></md-icon>{{ rental.contact.name }}</p>
+          <p><md-icon class="mdi mdi-phone"></md-icon>{{ rental.contact.phone}}</p>
+          <p><md-icon class="mdi mdi-email"></md-icon>{{ rental.contact.email }}</p>
+        </div>
+        <!-- horizontal buttons -->
+        <div layout="row">
+          <md-button ng-click="showContact=true" ng-show="!showContact">Contact</md-button>
+          <md-button ng-click="showContact=false" ng-show="showContact">Details</md-button>
+          <md-button ng-click="showAdmin=true" ng-show="!showAdmin">Admin</md-button>
+          <md-button ng-click="showAdmin=false" ng-show="showAdmin">Close</md-button>
+        </div>
+        <div class="rental-admin" ng-if="showAdmin">
+          <h3>Admin</h3>
+          <div layout="row">
+            <md-button class="md-primary">Edit</md-button>
+            <md-button class="md-warn">Details</md-button>
+          </div>
+        </div>
+      </md-card-content>
+    </md-card>
+  </md-content>
+
+  <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular/angular-animate.js"></script>
+    <script src="node_modules/angular/angular-aria.js"></script>
+    <script src="node_modules/angular-material/angular-material.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="components/rental.Ctr.js"></script>
+    <script src="components/rental.fac.js"></script>
+    </body>
 </html>

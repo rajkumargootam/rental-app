@@ -3,11 +3,19 @@
 
 angular
   .module("rentalApp")
-  .controller("rentalCtrl", function($scope,$http){
+  .controller("rentalCtrl", function($scope,$http,rentalsFactory,$mdSidenav){
 
-    $http.get('data/rentals.json').then(function(rentals){
+    rentalsFactory.getrentals().then(function(rentals){
      $scope.rentals = rentals.data;
     })
-    
+
+    $scope.openSidebar = function(){
+      $mdSidenav('left').open();
+    }
+
+    $scope.closeSidebar = function(){
+      $mdSidenav('left').close();
+    }
+
   });
 })();
