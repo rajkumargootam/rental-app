@@ -25,7 +25,8 @@
     <md-card-content>
       <div class="rental-info">
         <h2 class="md-title">{{ rental.title }}</h2>
-        <h3>{{ rental.price }}</h3>
+        <h3>{{ rental.price | currency }}</h3>
+        <h2>{{rental.date | date:'longDate'}}</h2>
         <p>{{ rental.description }}</p>
       </div>
     </md-card-content>
