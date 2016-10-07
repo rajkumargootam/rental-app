@@ -23,17 +23,21 @@
   <md-card  ng-repeat="rental in rentals"flex="30">
     <img ng-src="{{ rental.image}}" alt="">
     <md-card-content>
-      <div class="rental-info">
+      <div class="rental-info" ng-show="!showContact">
         <h2 class="md-title">{{ rental.title }}</h2>
         <h3>{{ rental.price | currency }}</h3>
         <h2>{{rental.date | date:'longDate'}}</h2>
         <p>{{ rental.description }}</p>
       </div>
 
-      <div class="rental-contact">
+      <div class="rental-contact" ng-show="showContact">
         <p><md-icon class="mdi mdi-account"></md-icon>{{ rental.contact.name }}</p>
         <p><md-icon class="mdi mdi-phone"></md-icon>{{ rental.contact.phone}}</p>
         <p><md-icon class="mdi mdi-email"></md-icon>{{ rental.contact.email }}</p>
+      </div>
+      <div layout="row">
+        <md-button ng-click="showContact=true">Contact</md-button>
+        <md-button ng-click="showContact=false">Details</md-button>
       </div>
     </md-card-content>
   </md-card>
