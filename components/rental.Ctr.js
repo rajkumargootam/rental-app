@@ -7,7 +7,13 @@ angular
 
     rentalsFactory.getrentals().then(function(rentals){
      $scope.rentals = rentals.data;
-    })
+   });
+
+   var contact = {
+     name: "rajkumar",
+     phone: "9700417562",
+     email: "dragonrider17562@gmail.com"
+   }
 
     $scope.openSidebar = function(){
       $mdSidenav('left').open();
@@ -19,6 +25,7 @@ angular
 
     $scope.saveRental = function(rental){
       if(rental){
+      rental.contact = contact;
       $scope.rentals.push(rental);
       $scope.rental = {};
       $scope.closeSidebar();
