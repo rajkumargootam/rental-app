@@ -17,5 +17,12 @@ angular
       $mdSidenav('left').close();
     }
 
+    $scope.saveRental = function(rental){
+      if(rental){
+      $scope.rentals.push(rental);
+      $scope.rental = {};
+      }
+    }
+
   });
 })();
