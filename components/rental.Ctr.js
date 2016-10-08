@@ -29,12 +29,7 @@ angular
       $scope.rentals.push(rental);
       $scope.rental = {};
       $scope.closeSidebar();
-      $mdToast.show(
-        $mdToast.simple()
-          .content("Rental Saved!!")
-          .position('top, right')
-          .hideDelay(3000)
-      );
+      showToast("Rental Saved!!");
       }
     }
 
@@ -43,6 +38,24 @@ angular
       $scope.openSidebar();
       $scope.rental = rental;
      }
+
+     $scope.saveEdit = function(){
+       $scope.editing = false;
+       $scope.rental = {};
+       $scope.closeSidebar();
+       showToast("Edit Saved!!");
+
+     }
+
+     function showToast(message){
+       $mdToast.show(
+         $mdToast.simple()
+           .content(message)
+           .position('top, right')
+           .hideDelay(3000)
+       );
+     }
+
 
   });
 })();
