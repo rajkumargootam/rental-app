@@ -21,6 +21,7 @@ angular
       if(rental){
       $scope.rentals.push(rental);
       $scope.rental = {};
+      $scope.closeSidebar();
       }
     }
 
