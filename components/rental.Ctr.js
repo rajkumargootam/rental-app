@@ -3,7 +3,7 @@
 
 angular
   .module("rentalApp")
-  .controller("rentalCtrl", function($scope,$http,rentalsFactory,$mdSidenav,$mdToast){
+  .controller("rentalCtrl", function($scope,$http,rentalsFactory,$mdSidenav,$mdToast,$mdDialog){
 
     rentalsFactory.getrentals().then(function(rentals){
      $scope.rentals = rentals.data;
@@ -44,6 +44,21 @@ angular
        $scope.rental = {};
        $scope.closeSidebar();
        showToast("Edit Saved!!");
+     }
+
+     $scope.deleteRental = function(event, rental){
+       var confirm = $mdDialog.confirm()
+        .title('Are you sure you want to delete' + rental.title)
+        .ok('Yes')
+        .cancel('No')
+        .targetEvent(event);
+        $mdDialog.show(confirm).then(function(){
+          var index = $scope.rentals.indexOf(rental);
+          $scope.rentals.splice(index, 1);
+        }, function(){
+
+        });
+
 
      }
 
