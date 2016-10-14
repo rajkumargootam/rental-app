@@ -3,10 +3,12 @@
 
 angular
   .module("rentalApp")
-  .controller("rentalCtrl", function($scope,$http,rentalsFactory,$mdSidenav,$mdToast,$mdDialog){
+  .controller("rentalCtrl", function($scope,$http,rentalsFactory,$mdSidenav,$mdDialog,$mdToast){
 
     rentalsFactory.getrentals().then(function(rentals){
      $scope.rentals = rentals.data;
+     $scope.categories = getCategories($scope.rentals);
+
    });
 
    var contact = {
@@ -14,6 +16,7 @@ angular
      phone: "9700417562",
      email: "dragonrider17562@gmail.com"
    }
+
 
     $scope.openSidebar = function(){
       $mdSidenav('left').open();
@@ -69,6 +72,17 @@ angular
            .position('top, right')
            .hideDelay(3000)
        );
+     }
+
+     function getCategories(rentals){
+       var categories = [];
+       angular.forEach(rentals , function(item){
+         angular.forEach(item.categories, function(category){
+           categories.push(category);
+         });
+       });
+       //lodash
+       return _.uniq(categories);
      }
 
 

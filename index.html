@@ -22,11 +22,23 @@
 		</div>
 	</md-toolbar>
 
-<div class="filters" layout="row" layout-align="center center" ng-show="showFilters">
+<div class="filters" layout="row" layout-align="center" ng-show="showFilters">
 	<md-input-container>
 		<label>Enter Search Term</label>
-		<input type="text" ng-model="renalsFilter">
+		<input type="text" ng-model="rentalsFilter">
 	</md-input-container>
+	<md-input-container>
+		<label>Category</label>
+		<md-select ng-model="rentalsFilter">
+			<md-option ng-repeat="category in categories" value="{{ category }}">
+				{{ category }}
+			</md-option>
+		</md-select>
+	</md-input-container>
+	<md-input-container>
+   <md-button class="md-warn" ng-click="rentalsFilter=''; category=''">Clear</md-button>
+	</md-input-container>
+
 </div>
 
 	<md-sidenav class="md-sidenav-left md-whiteframe-z2 sidenav" md-component-id="left">
@@ -60,7 +72,7 @@
 	</md-sidenav>
 
 	<md-content class="md-padding" layout="row" layout-wrap>
-		<md-card	ng-repeat="rental in rentals"flex="30">
+		<md-card	ng-repeat="rental in rentals | filter: rentalsFilter | filter: category" flex="30">
 			<img ng-src="{{ rental.image}}" alt="">
 			<md-card-content>
 				<div class="rental-info" ng-show="!showContact">
@@ -99,5 +111,6 @@
 		<script src="scripts/app.js"></script>
 		<script src="components/rental.Ctr.js"></script>
 		<script src="components/rental.fac.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.4/lodash.min.js"></script>
 		</body>
 </html>

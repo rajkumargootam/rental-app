@@ -1,80 +1,120 @@
-[
-    {
-      "id": 1,
-      "date":"2016-10-07",
-      "image":"https://ae01.alicdn.com/kf/HTB1EOozIVXXXXaTaXXXq6xXFXXX6/Bluedio-T2-fashionable-foldable-over-the-ear-bluetooth-headphones-BT-4-1-support-FM-radio-SD.jpg",
-      "title":"Bluedio-T2",
-      "price":"600",
-      "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "contact":{
-      "name":"Brock",
-      "phone":"(555) 555-5566",
-      "email":"brock@gmail.com"
-     }
-   },
-   {
-      "id": 2,
-      "date":"2016-10-08",
-      "image":"http://images.mitre.com/images/mitre-polarize-rain-jacket-p173-1140_zoom.jpg",
-      "title":"mitre-polarize-rain-jacket",
-      "price":"50",
-      "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "contact":{
-      "name":"john Doe",
-      "phone":"(555) 555-5555",
-      "email":"johndoe@gmail.com"
-     }
-   },
-   {
-      "id": 3,
-      "date":"2016-10-07",
-      "image":"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS-ivH3zqw7U75AftnzaPSk2i3HSoGs0OccoAtk7CYsr8Jl3qhy",
-      "title":"Mac laptop",
-      "price":"30",
-      "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "contact":{
-      "name":"Browm",
-      "phone":"(555) 555-5656",
-      "email":"brown@gmail.com"
-     }
-   },
-   {
-      "id": 4,
-      "date":"2016-10-06",
-      "image":"http://s.tmocache.com/content/dam/tmo/en-p/cell-phones/apple-iphone-6s/space-gray/stills/carousel-apple-iphone-6s-space-gray-380x380-1.jpg",
-      "title":"Iphone 6s",
-      "price":"100",
-      "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "contact":{
-      "name":"michel",
-      "phone":"(555) 666-6556",
-      "email":"michel@gmail.com"
-     }
-   },
-   {
-      "id": 5,
-      "date":"2016-10-04",
-      "image":"https://n4.sdlcdn.com/imgs/b/y/j/Philips-QT4000-Trimmer-Black-SDL758571612-1-c59c8.jpg",
-      "title":"Trimmer",
-      "price":"1000",
-      "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "contact":{
-      "name":"simeon",
-      "phone":"(555) 555-6666",
-      "email":"simeon@gmail.com"
-     }
-   },
-   {
-      "id": 6,
-      "date":"2016-10-05",
-      "image":"https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQyQENHNh7WE0bliPzJEQDv8Y5vGoNnbvrptnPc2lOUXxiWTQL6vg",
-      "title":"Hemet",
-      "price":"30",
-      "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "contact":{
-      "name":"Tim",
-      "phone":"(555) 666-6666",
-      "email":"tim@gmail.com"
-     }
-   }
-]
+[{
+"id": "1",
+"title": "Bluedio-T2",
+"description": "test 1 test 1 test 1 test 1 test 1 ",
+"price": "2000",
+"posted": "2015-10-24",
+"contact": {
+    "name": "test1 mona",
+    "phone": "98765678",
+    "email": "test@gmail.com"
+},
+"categories": [
+    "Electronics",
+    "headset"
+],
+"image": "https://ae01.alicdn.com/kf/HTB1EOozIVXXXXaTaXXXq6xXFXXX6/Bluedio-T2-fashionable-foldable-over-the-ear-bluetooth-headphones-BT-4-1-support-FM-radio-SD.jpg",
+"views": "200"
+}, {
+"id": "2",
+"title": "mitre-polarize-rain-jacket",
+"description": "test 2 test 2 test 2 test 2 test 2 ",
+"price": "2000",
+"posted": "2015-10-24",
+"contact": {
+    "name": "test2 mona",
+    "phone": "98765678",
+    "email": "test@gmail.com"
+},
+"categories": [
+    "clothes",
+    "jacket"
+],
+"image": "http://images.mitre.com/images/mitre-polarize-rain-jacket-p173-1140_zoom.jpg",
+"views": "200"
+}, {
+"id": "3",
+"title": "Mac laptop",
+"description": "test 3 test 3 test 3 test 3 test 3 ",
+"price": "3000",
+"posted": "2015-10-24",
+"contact": {
+    "name": "test3 mona",
+    "phone": "98765678",
+    "email": "test@gmail.com"
+},
+"categories": [
+    "Electronics",
+    "laptop"
+],
+"image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS-ivH3zqw7U75AftnzaPSk2i3HSoGs0OccoAtk7CYsr8Jl3qhy",
+"views": "100"
+}, {
+"id": "4",
+"title": "iphone 6s",
+"description": "test 4 test 4 test 4 test 4 test 4 ",
+"price": "4000",
+"posted": "2015-10-24",
+"contact": {
+    "name": "test4 mona",
+    "phone": "98765678",
+    "email": "test@gmail.com"
+},
+"categories": [
+    "Electronics",
+    "phone"
+],
+"image": "http://s.tmocache.com/content/dam/tmo/en-p/cell-phones/apple-iphone-6s/space-gray/stills/carousel-apple-iphone-6s-space-gray-380x380-1.jpg",
+"views": "40"
+}, {
+"id": "5",
+"title": "Trimmer",
+"description": "test 5 test 5 test 5 test 5 test 5 ",
+"price": "5000",
+"posted": "2015-10-24",
+"contact": {
+    "name": "test5 mona",
+    "phone": "98765678",
+    "email": "test@gmail.com"
+},
+"categories": [
+    "Electronics",
+    "Trimmer"
+],
+"image": "https://n4.sdlcdn.com/imgs/b/y/j/Philips-QT4000-Trimmer-Black-SDL758571612-1-c59c8.jpg",
+"views": "290"
+}, {
+"id": "6",
+"title": "Helmet",
+"description": "test 6 test 6 test 6 test 6 test 6 ",
+"price": "6000",
+"posted": "2015-10-24",
+"contact": {
+    "name": "test6 mona",
+    "phone": "98765678",
+    "email": "test@gmail.com"
+},
+"categories": [
+    "vehicle",
+    "Helmet"
+],
+"image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQyQENHNh7WE0bliPzJEQDv8Y5vGoNnbvrptnPc2lOUXxiWTQL6vg",
+"views": "10"
+},{
+"id": "7",
+"title": "galadro",
+"description": "test 6 test 6 test 6 test 6 test 6 ",
+"price": "6000",
+"posted": "2015-10-24",
+"contact": {
+    "name": "test6 mona",
+    "phone": "98765678",
+    "email": "test@gmail.com"
+},
+"categories": [
+    "vehicle",
+    "cars"
+],
+"image": "http://ag-spots-2012.o.auroraobjects.eu/2012/11/11/lamborghini-gallardo-spyder-c743811112012205956_1.jpg",
+"views": "10"
+}]
