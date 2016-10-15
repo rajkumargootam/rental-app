@@ -5,9 +5,23 @@ angular
   .module("rentalApp")
   .controller("rentalCtrl", function($scope,$http,rentalsFactory,$mdSidenav,$mdDialog,$mdToast){
 
+    var vm = this;
+    vm.openSidebar = openSidebar;
+    vm.closeSidebar =closeSidebar;
+    vm.saveRental = saveRental;
+    vm.editRental = editRental;
+    vm.saveRental = saveRental;
+    vm.deleteRental = deleteRental;
+
+    vm.rentals;
+    vm.categories;
+    vm.editing;
+    vm.rental;
+    //break
+
     rentalsFactory.getrentals().then(function(rentals){
-     $scope.rentals = rentals.data;
-     $scope.categories = getCategories($scope.rentals);
+     vm.rentals = rentals.data;
+     vm.categories = getCategories(vm.rentals);
 
    });
 
@@ -18,38 +32,38 @@ angular
    }
 
 
-    $scope.openSidebar = function(){
+    function openSidebar(){
       $mdSidenav('left').open();
     }
 
-    $scope.closeSidebar = function(){
+    function closeSidebar(){
       $mdSidenav('left').close();
     }
 
-    $scope.saveRental = function(rental){
+    function saveRental(rental){
       if(rental){
       rental.contact = contact;
-      $scope.rentals.push(rental);
-      $scope.rental = {};
-      $scope.closeSidebar();
+      vm.rentals.push(rental);
+      vm.rental = {};
+      vm.closeSidebar();
       showToast("Rental Saved!!");
       }
     }
 
-    $scope.editRental = function(rental) {
-      $scope.editing = true;
-      $scope.openSidebar();
-      $scope.rental = rental;
+    function editRental(rental) {
+      vm.editing = true;
+      openSidebar();
+      vm.rental = rental;
      }
 
-     $scope.saveEdit = function(){
-       $scope.editing = false;
-       $scope.rental = {};
-       $scope.closeSidebar();
+     function saveEdit(){
+       vm.editing = false;
+       vm.rental = {};
+       closeSidebar();
        showToast("Edit Saved!!");
      }
 
-     $scope.deleteRental = function(event, rental){
+     function deleteRental(event, rental){
        var confirm = $mdDialog.confirm()
         .title('Are you sure you want to delete' + rental.title)
         .ok('Yes')
@@ -57,7 +71,7 @@ angular
         .targetEvent(event);
         $mdDialog.show(confirm).then(function(){
           var index = $scope.rentals.indexOf(rental);
-          $scope.rentals.splice(index, 1);
+          vm.rentals.splice(index, 1);
         }, function(){
 
         });

@@ -1,12 +1,14 @@
 angular
-   .module("rentalApp", ['ngMaterial'])
-   .config(function($mdThemingProvider) {
+   .module("rentalApp", ['ngMaterial', 'ui.router'])
+   .config(function($mdThemingProvider,$stateProvider) {
       $mdThemingProvider.theme('default')
         .primaryPalette('teal')
         .accentPalette('orange');
-    })
-   .directive("helloWorld",function(){
-    return{
-      template: "<h1>{{ message }}</h1>"
-    }
-  });
+
+        $stateProvider
+        .state('rental', {
+          url:'/rentals',
+          templateUrl:'components/rentals/rentals.tpl.html',
+          controller:'rentalCtrl as vm'
+        });
+      });

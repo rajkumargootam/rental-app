@@ -1,3 +1,21 @@
 button .material-icons {
   margin-bottom: 15px;
 }
+
+.rental.ng-enter, .rental.ng-move {
+  transition: 0.4s all;
+  opacity: 0;
+}
+
+.rental.ng-enter.ng-enter-active, .rental.ng-move.ng-move-active {
+  opacity: 1;
+}
+
+.rental.ng-leave{
+  animation: 0.4s fade_rental;
+}
+
+@keyframes fade_rental{
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
