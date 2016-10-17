@@ -31,35 +31,8 @@
 
 </div>
 
-<md-sidenav class="md-sidenav-left md-whiteframe-z2 sidenav" md-component-id="left">
-  <md-toolbar>
-    <h1 class="md-toolbar-tools">Add a Rental</h1>
-  </md-toolbar>
-  <md-content layout-padding>
-    <form>
-      <md-input-container>
-        <label for="title">Title</label>
-        <input type="text" id="title" ng-model="rental.title" md-autofocus>
-      </md-input-container>
-      <md-input-container>
-        <label for="price">Price</label>
-        <input type="text" id="price" ng-model="rental.price">
-      </md-input-container>
-      <md-input-container>
-        <label for="description">Description</label>
-        <textarea type="text" id="description" ng-model="rental.description"></textarea>
-      </md-input-container>
-      <md-input-container>
-        <label for="image">Image Link</label>
-        <input type="text" id="image" ng-model="rental.image">
-      </md-input-container>
-      <md-button ng-if="!editing" class="md-primary" ng-click=" vm.saveRental(rental)">Save</md-button>
-      <md-button ng-click="vm.saveEdit()" ng-if="editing" class="md-primary">Save Edit</md-button>
-      <md-button ng-click="vm.closeSidebar()" class="md-warn">Cancel</md-button>
-      <pre>{{ rental | json }}</pre>
-    </form>
-  </md-content>
-</md-sidenav>
+<ui-view></ui-view>
+
 
 <md-content class="md-padding" layout="row" layout-wrap>
   <md-card	ng-repeat="rental in vm.rentals | filter: rentalsFilter | filter: category" class="rental" flex="30">

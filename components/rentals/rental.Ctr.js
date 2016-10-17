@@ -3,21 +3,18 @@
 
 angular
   .module("rentalApp")
-  .controller("rentalCtrl", function($scope,$http,rentalsFactory,$mdSidenav,$mdDialog,$mdToast){
+  .controller("rentalCtrl", function($scope,$http,$state,rentalsFactory,$mdSidenav,$mdDialog,$mdToast){
 
     var vm = this;
-    vm.openSidebar = openSidebar;
-    vm.closeSidebar =closeSidebar;
-    vm.saveRental = saveRental;
-    vm.editRental = editRental;
-    vm.saveRental = saveRental;
-    vm.deleteRental = deleteRental;
-
-    vm.rentals;
     vm.categories;
-    vm.editing;
     vm.rental;
-    //break
+    vm.rentals;
+    vm.closeSidebar =closeSidebar;
+    vm.deleteRental = deleteRental;
+    vm.editing;
+    vm.editRental = editRental;
+    vm.openSidebar = openSidebar;
+    vm.saveRental = saveRental;
 
     rentalsFactory.getrentals().then(function(rentals){
      vm.rentals = rentals.data;
@@ -33,7 +30,7 @@ angular
 
 
     function openSidebar(){
-      $mdSidenav('left').open();
+     $state.go('rental.new');
     }
 
     function closeSidebar(){

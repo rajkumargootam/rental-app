@@ -10,5 +10,10 @@ angular
           url:'/rentals',
           templateUrl:'components/rentals/rentals.tpl.html',
           controller:'rentalCtrl as vm'
+        })
+        .state('rental.new', {
+          url:'/new',
+          templateUrl:'components/rentals/new/rentals.new.html',
+          controller:'newRentalCtrl as vm'
         });
       });
