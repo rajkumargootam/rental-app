@@ -6,6 +6,7 @@
     .controller('newRentalCtrl', function($scope,$state,$mdSidenav, $mdDialog, $timeout, rentalsFactory){
       var vm = this;
       vm.closeSidebar = closeSidebar;
+      vm.saveRental = saveRental;
 
        $timeout(function () {
         $mdSidenav('left').open();
@@ -21,6 +22,20 @@
 
        function closeSidebar() {
          vm.sidenavOpen = false;
+       }
+       function saveRental(rental){
+         if(rental){
+
+           rental.contact = {
+             name: "rajkumar",
+             phone: "9700417562",
+             email: "dragonrider17562@gmail.com"
+           }
+
+
+           $scope.$emit('newRental',rental);
+           vm.sidenavOpen = false;
+         }
        }
      });
 

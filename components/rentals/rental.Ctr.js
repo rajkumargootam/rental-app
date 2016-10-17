@@ -22,6 +22,12 @@ angular
 
    });
 
+   $scope.$on('newRental', function(event, rental){
+     rental.id = vm.rentals.length + 1;
+     vm.rentals.push(rental);
+     showToast('Rental saved!');
+   })
+
    var contact = {
      name: "rajkumar",
      phone: "9700417562",
