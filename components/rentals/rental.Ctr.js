@@ -74,8 +74,8 @@ angular
         .cancel('No')
         .targetEvent(event);
         $mdDialog.show(confirm).then(function(){
-          var index = $scope.rentals.indexOf(rental);
-          vm.rentals.splice(index, 1);
+        vm.rentals.$remove(rental);
+        showToast('Rental deleted!')
         }, function(){
 
         });
