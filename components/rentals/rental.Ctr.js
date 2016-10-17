@@ -21,8 +21,7 @@ angular
     });
 
    $scope.$on('newRental', function(event, rental){
-     rental.id = vm.rentals.length + 1;
-     vm.rentals.push(rental);
+     vm.rentals.$add(rental);
      showToast('Rental saved!');
    });
 
@@ -57,8 +56,7 @@ angular
 
     function editRental(rental) {
       $state.go('rental.edit', {
-        id: rental.id,
-        rental:rental
+        id: rental.$id
       });
      }
 

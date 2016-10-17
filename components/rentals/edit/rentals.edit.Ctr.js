@@ -5,9 +5,10 @@
     .module('rentalApp')
     .controller('editRentalCtrl', function($scope,$state,$mdSidenav, $mdDialog, $timeout, rentalsFactory){
       var vm = this;
+      vm.rentals = rentalsFactory.ref;
       vm.closeSidebar = closeSidebar;
       vm.saveEdit = saveEdit;
-      vm.rental=$state.params.rental;
+      vm.rental = vm.rentals.$getRecord($state.params.id);
 
        $timeout(function () {
         $mdSidenav('left').open();
@@ -25,8 +26,10 @@
          vm.sidenavOpen = false;
        }
        function saveEdit(rental){
+         vm.rentals.$save(vm.rental).then(function(){
          $scope.$emit('editSaved', 'Edit saved!')
-         vm.sidenavOpen = false;  
+         vm.sidenavOpen = false;
+       });
        }
      });
 
