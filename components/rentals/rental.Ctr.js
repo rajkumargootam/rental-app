@@ -26,7 +26,11 @@ angular
      rental.id = vm.rentals.length + 1;
      vm.rentals.push(rental);
      showToast('Rental saved!');
-   })
+   });
+
+   $scope.$on('editSaved', function(event,message){
+     showToast(message);  
+   });
 
    var contact = {
      name: "rajkumar",
@@ -54,9 +58,10 @@ angular
     }
 
     function editRental(rental) {
-      vm.editing = true;
-      openSidebar();
-      vm.rental = rental;
+      $state.go('rental.edit', {
+        id: rental.id,
+        rental:rental
+      });
      }
 
      function saveEdit(){
