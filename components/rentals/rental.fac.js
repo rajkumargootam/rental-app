@@ -3,13 +3,11 @@
 
   angular
     .module("rentalApp")
-    .factory("rentalsFactory", function($http){
-       function getrentals(){
-         return $http.get('data/rentals.json');
-       }
+    .factory("rentalsFactory", function($http, $firebaseArray){
 
+      var ref = new Firebase('https://rentals-app.firebaseio.com/');
         return{
-          getrentals:getrentals
+          ref: $firebaseArray(ref)
         }
     });
 })();

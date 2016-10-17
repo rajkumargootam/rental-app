@@ -1,5 +1,5 @@
 angular
-   .module("rentalApp", ['ngMaterial', 'ui.router'])
+   .module("rentalApp", ['ngMaterial', 'ui.router','firebase'])
    .config(function($mdThemingProvider,$stateProvider) {
       $mdThemingProvider.theme('default')
         .primaryPalette('teal')

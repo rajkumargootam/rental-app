@@ -15,12 +15,10 @@ angular
     vm.editRental = editRental;
     vm.openSidebar = openSidebar;
     vm.saveRental = saveRental;
-
-    rentalsFactory.getrentals().then(function(rentals){
-     vm.rentals = rentals.data;
-     vm.categories = getCategories(vm.rentals);
-
-   });
+    vm.rentals = rentalsFactory.ref;
+    vm.rentals.$loaded().then(function(classifieds){
+      vm.categories = getCategories(vm.rentals);
+    });
 
    $scope.$on('newRental', function(event, rental){
      rental.id = vm.rentals.length + 1;
@@ -29,7 +27,7 @@ angular
    });
 
    $scope.$on('editSaved', function(event,message){
-     showToast(message);  
+     showToast(message);
    });
 
    var contact = {
